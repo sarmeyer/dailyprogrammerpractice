@@ -5,6 +5,7 @@ fs.readFile('strings.txt', function(err, data) {
     return console.error(err);
   }
   sortStrings(data.toString());
+  secondSort(data.toString());
 });
 
 function sortStrings(data) {
@@ -19,17 +20,24 @@ function sortStrings(data) {
       if (!special && check && check.length >= 2 && letters[j] === letters[j + 1]) {
         nice.push(stringArray[i])
         nice.push(stringArray.indexOf(letters.join('')))
-        console.log(nice);
+          // console.log(nice);
       }
     }
   }
 }
 
-
-
-
-// It does not contain the strings ab, cd, pq, or xy, even if they are part of one of the other requirements.
-
-
-// It contains at least one letter that appears twice in a row, like xx, abcdde (dd), or aabbccdd (aa, bb, cc, or dd).
-// It contains at least three vowels (aeiou only), like aei, xazegov, or aeiouaeiouaeiou. √
+function secondSort(data) {
+  var nice2 = [];
+  var stringArray = data.replace(/\n/g, " ").split(" ");
+  for (var i = 0; i < stringArray.length; i++) {
+    var strings = stringArray[i].split();
+    var letters = strings[0].split('');
+    for (var j = 0; j < letters.length; j++) {
+      var pairs = stringArray[i].match(/(\w{2}).*?(\1)/gi);
+      if (pairs && letters[j] === letters[j + 2]) {
+        nice2.push(stringArray[i]);
+        // console.log(nice2.length);
+      }
+    }
+  }
+}
