@@ -5,6 +5,9 @@ Recursion is a technique where a method calls itself. Recursion can be used to t
 ### Challenge
 
 Use recursion to solve [Fizz buzz](https://en.wikipedia.org/wiki/Fizz_buzz)!
+/3 Fizz
+/5 buzz
+/3 and /5 fizz buzz
 
 ### Recursion Example
 
@@ -21,6 +24,7 @@ function addOne(array) {
 
 function addOne(array) {
   function recursion(array, index) {
+    console.log(index);
     // base case
     if (array.length == index) {
       return array
