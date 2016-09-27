@@ -1,21 +1,23 @@
-![gif](http://media.giphy.com/media/quEsMOrr3hmQ8/giphy.gif)
+  var matrix = [
+    [44, 23],
+    [21, 10],
+    [9, 28]
+  ];
 
-# Matrix
+  function dimensions(matrix) {
+    var rows = matrix.length;
+    var cols = matrix[0].length;
+    var dimension = `${rows} x ${cols}`
+    return dimension.toString();
+  }
+  dimensions(matrix);
 
-In mathematics, a matrix (plural matrices) is a rectangular array of numbers, symbols, or expressions, arranged in rows and columns that is interpreted and manipulated in certain prescribed ways. One such way is to state the dimensions of the matrix. For example, the dimensions of the matrix below are 2 × 3 (read "two by three"), because there are two rows and three columns.
+  function rotate(matrix) {
+    //var result1 = [[9, 21, 44],
+    //  [28, 10, 23]];
+    //# of cols become # of rows
 
-```
-var matrix = [[1, 64, 23],
-              [22, 50, 2]];
-```
-
-## Challenge
-
-First, write a function that returns the dimensions of a matrix. For example, with the matrix above, it should return a string "2x3".
-
-Then, write a function that rotates the matrix 90 degrees to the right. In the example above, it changes the dimensions from "2x3" to "3x2". The resulting matrix from the example above would be:
-
-```
+  }
 [[22, 1],
  [50, 64],
  [2, 23]]
