@@ -1,0 +1,1 @@
+addTwo(a, b) => (a + b);
